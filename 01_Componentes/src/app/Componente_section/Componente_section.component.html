@@ -1,0 +1,26 @@
+<h1>Listado de Personas</h1>
+
+<p id="1">
+  Nombre: {{nombre}}<br>
+  Edad: {{edad}}<br>
+  Peso en Kg: {{peso}}<br>
+  Peso en libras: {{convertirPesoALibras()}}<br>
+  Peso en Kg propuesto para verano (operacion bikini): {{peso - 5}}<br>
+</p>
+
+
+<button [disabled]='botonDeshabilitado' [style]='botonOculto'>Agregar Persona</button>
+<br/>
+
+
+<!--AL PULSAR HABILIRADO LO DESACTIVAMOS Y LO ACTIVAMOS-->
+<button (click)="cambiarEstadoHabilitado()">Habilitar/Deshabilitar 'Agregar Persona'</button>
+
+<!--AL PULSAR OCULTO LO OCULTAMOS Y LO VOLVEMOS A PONER-->
+<button (click)="cambiarEstadoOculto()">Ocultar/Visualizar 'Agregar Persona'</button>
+<br/>
+
+
+<h4>Inserta la profesión de la persona</h4>
+<input type="text" [(ngModel)]="profesion">     <!--PONE PROFESION, SI LO CAMBIAS PONE LO QUE METAS-->
+<p>Replicando: {{profesion}}</p>
