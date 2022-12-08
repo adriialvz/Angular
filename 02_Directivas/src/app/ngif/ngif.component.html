@@ -1,0 +1,36 @@
+<hr/>
+
+<h1>Directiva ngif</h1>
+
+<!--MUESTRA Y OCULTA EL TEXTO CADA VEZ QUE PULSAMOS-->
+<button (click)="mostrarOcultarTexto1()">mostrar/ocultar TEXTO ABAJO</button>
+<h3 *ngIf="mostrarTexto1">{{texto1}}</h3><br/><br/><br><br>
+
+
+
+
+
+<button (click)="mostrarOcultarTexto2()">mostrar/ocultar TEXTO ABAJO</button>
+
+<div *ngIf="mostrarTexto2; else texto2oculto">
+    <h3>{{texto2}}</h3>
+</div>
+<ng-template #texto2oculto>     
+    <h4>Hemos cambiado el mensaje!!!!</h4>
+</ng-template><br><br><br><br>
+
+
+
+
+
+
+
+<button (click)="mostrarOcultarTexto3()">mostrar/ocultar TEXTO ABAJO</button>
+<div *ngIf="condicion == 'cadena1'; else texto3oculto">
+    <h4>Podemos ver el contenido: {{condicion}}</h4>
+</div>
+<ng-template #texto3oculto>
+    <h4 class="rojo">Podemos ver el contenido: {{condicion}}</h4>
+</ng-template>
+
+<hr/><br><br><br><br><br><br>
